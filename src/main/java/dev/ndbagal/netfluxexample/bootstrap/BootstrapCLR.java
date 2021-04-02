@@ -1,7 +1,5 @@
 package dev.ndbagal.netfluxexample.bootstrap;
 
-import java.util.UUID;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
