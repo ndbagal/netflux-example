@@ -1,5 +1,6 @@
 package dev.ndbagal.netfluxexample.controllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class MovieController {
 
   private final MovieService movieService;
 
-  @GetMapping("/{movieId}/events")
+  @GetMapping(value = "/{movieId}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
   Flux<MovieEvent> streamMovieEvents(@PathVariable String movieId) {
     return movieService.events(movieId);
   }
